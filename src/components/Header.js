@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
 import { getUserProfile } from "../redux/features/profileSlice";
 
-const Header = ({ socket }) => {
+const Header = () => {
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState("");
   const [notifications, setNotifications] = useState([]);
@@ -36,13 +36,13 @@ const Header = ({ socket }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
-  useEffect(() => {
-    if (socket) {
-      socket.on("getNotification", (data) => {
-        setNotifications((prev) => [...prev, data]);
-      });
-    }
-  }, [socket]);
+  // useEffect(() => {
+  //   if (socket) {
+  //     socket.on("getNotification", (data) => {
+  //       setNotifications((prev) => [...prev, data]);
+  //     });
+  //   }
+  // }, [socket]);
 
   const handleBell = () => {
     if (notifications.length) {

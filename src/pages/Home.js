@@ -23,7 +23,7 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-const Home = ({ socket }) => {
+const Home = () => {
   const {
     tours,
     loading,
@@ -113,9 +113,7 @@ const Home = ({ socket }) => {
           <MDBContainer>
             <MDBRow className="row-cols-1 row-cols-md-3 g-2">
               {tours &&
-                tours.map((item) => (
-                  <CardTour key={item._id} socket={socket} {...item} />
-                ))}
+                tours.map((item) => <CardTour key={item._id} {...item} />)}
             </MDBRow>
           </MDBContainer>
         </MDBCol>

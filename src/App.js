@@ -15,7 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import NotFound from "./pages/NotFound";
 import TagTours from "./pages/TagTours";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import Category from "./pages/Category";
 import Profile from "./pages/Profile";
 import Tours from "./pages/Tours";
@@ -23,7 +23,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 
 function App() {
-  const [socket, setSocket] = useState(null);
+  // const [socket, setSocket] = useState(null);
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
   useEffect(() => {
@@ -33,29 +33,29 @@ function App() {
 
   const devEnv = process.env.NODE_ENV !== "production";
 
-  useEffect(() => {
-    setSocket(
-      io(
-        `${
-          devEnv
-            ? process.env.REACT_APP_DEV_API
-            : process.env.REACT_APP_PROD_API
-        }`
-      )
-    );
-  }, [devEnv]);
+  // useEffect(() => {
+  //   setSocket(
+  //     io(
+  //       `${
+  //         devEnv
+  //           ? process.env.REACT_APP_DEV_API
+  //           : process.env.REACT_APP_PROD_API
+  //       }`
+  //     )
+  //   );
+  // }, [devEnv]);
 
-  useEffect(() => {
-    socket?.emit("newUser", user?.result?.name);
-  }, [socket, user]);
+  // useEffect(() => {
+  //   socket?.emit("newUser", user?.result?.name);
+  // }, [socket, user]);
   return (
     <BrowserRouter>
       <div className="App">
-        <Header socket={socket} />
+        <Header />
         <ToastContainer />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home socket={socket} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/tours" element={<Tours />} />
           <Route path="/tours/search" element={<Home />} />
           <Route path="/tours/tag/:tag" element={<TagTours />} />
