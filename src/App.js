@@ -31,7 +31,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const devEnv = process.env.NODE_ENV !== "production";
+  // const devEnv = process.env.NODE_ENV !== "production";
 
   // useEffect(() => {
   //   setSocket(

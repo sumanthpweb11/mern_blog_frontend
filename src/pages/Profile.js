@@ -37,7 +37,7 @@ const Profile = () => {
       dispatch(getUserProfile(id));
       dispatch(getToursByUser(id));
     }
-  }, [id]);
+  }, [id, dispatch]);
 
   if (loading) {
     return <Spinner />;

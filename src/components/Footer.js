@@ -10,7 +10,7 @@ const Footer = () => {
           style={{ backgroundColor: "#f0e6ea", color: "#606080" }}
         >
           © 2022 Copyright:
-          <a className="text-reset fw-bold">&nbsp;Touropedia</a>
+          {/* <a className="text-reset fw-bold">&nbsp;Touropedia</a> */}
         </div>
       </MDBFooter>
     </div>
