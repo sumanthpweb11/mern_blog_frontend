@@ -182,21 +182,21 @@ const tourSlice = createSlice({
     },
     [createTour.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getTours.pending]: (state, action) => {
       state.loading = true;
     },
     [getTours.fulfilled]: (state, action) => {
       state.loading = false;
-      state.tours = action.payload?.data;
-      state.numberOfPages = action.payload?.numberOfPages;
-      state.currentPage = action.payload?.currentPage;
-      state.totalToursData = action.payload?.totalToursData;
+      state.tours = action.payload.data;
+      state.numberOfPages = action.payload.numberOfPages;
+      state.currentPage = action.payload.currentPage;
+      state.totalToursData = action.payload.totalToursData;
     },
     [getTours.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getTour.pending]: (state, action) => {
       state.loading = true;
@@ -207,7 +207,7 @@ const tourSlice = createSlice({
     },
     [getTour.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getToursByUser.pending]: (state, action) => {
       state.loading = true;
@@ -218,7 +218,7 @@ const tourSlice = createSlice({
     },
     [getToursByUser.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [deleteTour.pending]: (state, action) => {
       state.loading = true;
@@ -235,7 +235,7 @@ const tourSlice = createSlice({
     },
     [deleteTour.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [updateTour.pending]: (state, action) => {
       state.loading = true;
@@ -256,7 +256,7 @@ const tourSlice = createSlice({
     },
     [updateTour.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [likeTour.pending]: (state, action) => {},
     [likeTour.fulfilled]: (state, action) => {
@@ -271,7 +271,7 @@ const tourSlice = createSlice({
       }
     },
     [likeTour.rejected]: (state, action) => {
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
 
     [searchTours.pending]: (state, action) => {
@@ -283,7 +283,7 @@ const tourSlice = createSlice({
     },
     [searchTours.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getToursByTag.pending]: (state, action) => {
       state.loading = true;
@@ -294,7 +294,7 @@ const tourSlice = createSlice({
     },
     [getToursByTag.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getRelatedTours.pending]: (state, action) => {
       state.loading = true;
@@ -305,7 +305,7 @@ const tourSlice = createSlice({
     },
     [getRelatedTours.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
     [getAllTags.pending]: (state, action) => {
       state.loading = true;
@@ -316,7 +316,7 @@ const tourSlice = createSlice({
     },
     [getAllTags.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
 
     [loadMoreTours.pending]: (state, action) => {
@@ -324,12 +324,12 @@ const tourSlice = createSlice({
     },
     [loadMoreTours.fulfilled]: (state, action) => {
       state.loading = false;
-      state.loadedTours = [...state.loadedTours, ...action.payload?.tours];
-      state.totalTours = action.payload?.totalTours;
+      state.loadedTours = [...state.loadedTours, ...action.payload.tours];
+      state.totalTours = action.payload.totalTours;
     },
     [loadMoreTours.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload?.message;
+      state.error = action.payload.message;
     },
   },
 });
